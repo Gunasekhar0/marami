@@ -29,7 +29,6 @@ import product11Main from './assets/product11Main.jpeg';
 import product12Main from './assets/product12Main.jpg';
 import product13Main from './assets/product13Main.jpg';
 import dropdownImage from './assets/dropdown-image.png';
-import topSectionBg from './assets/top-section-bg.jpg'; // Example background image
 
 const products = [
   {
