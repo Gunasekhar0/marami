@@ -1,38 +1,138 @@
-.App {
+/* Top Section Styling with Background Image */
+.top-section {
+  padding: 20px;
+  text-align: center;
+  background-image: url('./assets/top-section-bg.jpg'); /* Reference to the background image */
+  background-size: cover; /* Ensures the image covers the entire section */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* No repeat to avoid pattern repetition */
+  color: rgb(29, 160, 203); /* Text color for contrast against the background image */
+  
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column; /* Change to column to include top section */
+  height: 100vh;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  flex: 1; /* Allow the content section to grow */
+}
+
+.description-container {
+  padding: 20px; /* Add padding to create space around the text */
+  margin: 10px; /* Add margin to create space between this and other elements */
+  border-radius: 5px; /* Add rounded corners for a softer look */
+  background-color: #f9f9f9; /* Light background color for contrast */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  line-height: 1.6; /* Increases spacing between lines for readability */
+  font-size: 16px; /* Adjusts font size for readability */
+  color: #333; /* Sets text color for contrast with the background */
+}
+
+.left-menu {
+  width: 25%; 
+  padding: 10px;
+  background-color: #b5dcec;
+  /* Allows vertical scrolling */
+  overflow-y: auto; 
+}
+
+.left-menu h2 {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.left-menu::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in WebKit-based browsers (Chrome, Safari, etc.) */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.main-content::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in WebKit-based browsers */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+.product-button {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 10px;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+.product-button img {
+  width: 50px; 
+  height: 50px;
+  margin-right: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.product-button:hover {
+  background-color: #5ea4ee;
+  color: rgb(254, 250, 250);
+}
+
+.main-content {
+  flex: 1; 
+  padding: 20px;
+  /* Allows vertical scrolling */
+  overflow-y: auto; 
+}
+
+.product-info {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(79, 139, 162, 0.102);
+}
+
+.main-product-image {
+  margin-top: 20px;
+  border-radius: 10px;
+ 
+ 
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: auto;
+  height: auto;
+  max-width: 50%;
+  max-height: 50%;
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column; /* Layout changes to column for smaller screens */
   }
-  to {
-    transform: rotate(360deg);
+
+  .left-menu {
+    width: 100%; 
+    padding: 5px;
+    display: flex;
+    justify-content: space-around;
+    /* Allows scrolling when in column mode */
+    overflow-y: auto; 
+  }
+
+  .main-product-image {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-button img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .main-product-image {
+    width: 200px;
+    height: 200px;
   }
 }
